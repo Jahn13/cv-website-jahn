@@ -1,4 +1,4 @@
-const API = "https://api.github.com/users/Jahn13"
+const API = "https://api.github.com/users/Jahn13/repos"
 const containerProjects = document.querySelector("#containerCards")
 
 const repoData = (data) =>  {
@@ -28,18 +28,9 @@ const repoData = (data) =>  {
 
 const fetchData = async (url) => {
     try{
-        let options =  { "headers": 
-                            {
-                                "Authorization": "token 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"
-                            }
-                        }
-        let response = await fetch(url, options);
+        let response = await fetch(url);
         let data = await response.json();
-        let repos = await fetch(data.repos_url, options)
-        let responseRepos = await repos.json();
-
-        console.log(responseRepos)
-        repoData(responseRepos);
+        repoData(data);
     }catch(error){
         console.log(error)
     }
