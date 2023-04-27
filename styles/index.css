@@ -1,0 +1,51 @@
+.separacion-secciones{
+    width: auto;
+    height: 40rem;
+}
+.perfil-fondo{
+    width: 100%;
+    height: 15rem;
+}
+.mr-1{
+    margin-right: 15px;
+}
+.pr-1{
+    margin-right: 15px;
+}
+.text-justify{
+    text-align: justify;
+}
+
+.offcanvas-w{
+    width: 290px !important;  
+}
+
+.color-gray{
+    background-color: lightsteelblue;
+}
+
+.icons-facts{
+    font-size: 2rem;
+}
+.boton{
+    padding: 8px;
+    background-color: rgb(167, 210, 235);
+    border-radius: 3rem;
+    color: rgb(57, 128, 194);
+}
+.boton:hover{
+    background-color: rgb(57, 128, 194);
+    color: white;
+}
+.p{
+    padding: 1rem;
+}
+.bg-azulmarino{
+    background-color: rgb(2, 2, 27);
+}
+
+
+.nav-page{
+    position: fixed;
+    height: 100vh;
+}
