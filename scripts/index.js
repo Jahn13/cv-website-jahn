@@ -1,4 +1,6 @@
-const API = "https://api.github.com/users/Jahn13/repos"
+import enviroment from "./config.js"
+
+const API = "https://api.github.com/users/Jahn13"
 const containerProjects = document.querySelector("#containerCards")
 
 const repoData = (data) =>  {
@@ -28,9 +30,18 @@ const repoData = (data) =>  {
 
 const fetchData = async (url) => {
     try{
-        let response = await fetch(url);
+        let options = {
+            "headers":
+            {
+                "Authorization": `token ${(enviroment.TOKEN_GITHUB)}`
+            }
+        }
+        let response = await fetch(url, options);
         let data = await response.json();
-        repoData(data);
+        let repos = await fetch(data.repos_url, options);
+        let responseRepos = await repos.json();
+        
+        repoData(responseRepos);
     }catch(error){
         console.log(error)
     }
